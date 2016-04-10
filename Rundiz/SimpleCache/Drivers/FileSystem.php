@@ -76,9 +76,9 @@ class FileSystem implements SimpleCacheInterface
     {
         $result = $this->deleteCacheSubfolderRecursively($this->cache_path);
         if ($result === false) {
-			return false;
-		}
-		return true;
+            return false;
+        }
+        return true;
     }// clear
 
 
