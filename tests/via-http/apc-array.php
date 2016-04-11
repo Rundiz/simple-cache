@@ -1,6 +1,6 @@
 <?php
 require dirname(dirname(__DIR__)).'/Rundiz/SimpleCache/SimpleCacheInterface.php';
-require dirname(dirname(__DIR__)).'/Rundiz/SimpleCache/Drivers/FileSystem.php';
+require dirname(dirname(__DIR__)).'/Rundiz/SimpleCache/Drivers/Apc.php';
 
 function displayCacheTest($cache_name, $cache_value)
 {
@@ -28,8 +28,8 @@ function displayCacheTest($cache_name, $cache_value)
     }
 
     if (
-        ($get_action == 'delete_obj1' && $cache_name == 'test.obj1') ||
-        ($get_action == 'delete_obj2' && $cache_name == 'test.obj2')
+        ($get_action == 'delete_array2' && $cache_name == 'test.array2') ||
+        ($get_action == 'delete_array3' && $cache_name == 'test.array3')
     ) {
         $test_delete = $SimpleCache->delete($cache_name);
         echo '<p>Delete cache data: '.gettype($test_delete).' ('.var_export($test_delete, true).')</p>';
@@ -51,36 +51,25 @@ function displayCacheTest($cache_name, $cache_value)
         <title>Simple Cache tests.</title>
     </head>
     <body>
-        <h1>Test variable type object.</h1>
+        <h1>Test variable type array.</h1>
         <p><a href="./">Go back</a> | <a href="?act=clear">Clear all cache</a></p>
         <hr>
+        <h2>2D array <small><a href="?act=delete_array2">delete</a></small></h2>
         <?php
         
         global $get_action;
         $get_action = (isset($_GET['act']) ? $_GET['act'] : '');
         global $SimpleCache;
-        $SimpleCache = new \Rundiz\SimpleCache\Drivers\FileSystem();
+        $SimpleCache = new \Rundiz\SimpleCache\Drivers\Apc();
+
+        $cache_name = 'test.array2';
+        displayCacheTest($cache_name, array('Hi world', 'Bye world'));
         ?> 
 
-        <h2>Test object 1 <small><a href="?act=delete_obj1">delete</a></small></h2>
+        <h2>Multi dimension array <small><a href="?act=delete_array3">delete</a></small></h2>
         <?php
-        $cache_name = 'test.obj1';
-        class TestClass
-        {
-            public $sayhi = 'Hello World';
-            public $saybye = 'Bye Bye!';
-            public function user()
-            {
-                return array(
-                    'name' => 'John Wick', 
-                    'carreer' => 'Kiler', 
-                    'skill' => array('str' => 10, 'agi' => 9, 'dex' => 7),
-                );
-            }
-        }
-        $obj = new TestClass();
-        displayCacheTest($cache_name, $obj);
-        unset($obj);
+        $cache_name = 'test.array3';
+        displayCacheTest($cache_name, array('sayhi' => 'Hello World', 'saybye' => 'Bye Bye!', 'user' => array('name' => 'John Wick', 'carreer' => 'Kiler', 'skill' => array('str' => 10, 'agi' => 9, 'dex' => 7))));
         ?> 
 
         <?php

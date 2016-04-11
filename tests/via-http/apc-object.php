@@ -1,6 +1,6 @@
 <?php
 require dirname(dirname(__DIR__)).'/Rundiz/SimpleCache/SimpleCacheInterface.php';
-require dirname(dirname(__DIR__)).'/Rundiz/SimpleCache/Drivers/FileSystem.php';
+require dirname(dirname(__DIR__)).'/Rundiz/SimpleCache/Drivers/Apc.php';
 
 function displayCacheTest($cache_name, $cache_value)
 {
@@ -59,7 +59,7 @@ function displayCacheTest($cache_name, $cache_value)
         global $get_action;
         $get_action = (isset($_GET['act']) ? $_GET['act'] : '');
         global $SimpleCache;
-        $SimpleCache = new \Rundiz\SimpleCache\Drivers\FileSystem();
+        $SimpleCache = new \Rundiz\SimpleCache\Drivers\Apc();
         ?> 
 
         <h2>Test object 1 <small><a href="?act=delete_obj1">delete</a></small></h2>

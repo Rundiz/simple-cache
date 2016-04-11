@@ -12,5 +12,11 @@
             <li><a href="variable-array.php">Test array variable type</a></li>
             <li><a href="variable-object.php">Test object variable type</a></li>
         </ul>
+        <h2>APC driver</h2>
+        <ul>
+            <li><a href="apc-basic.php">Test basic variable types</a></li>
+            <li><a href="apc-array.php">Test array variable type</a></li>
+            <li><a href="apc-object.php">Test array variable type</a></li>
+        </ul>
     </body>
 </html>
