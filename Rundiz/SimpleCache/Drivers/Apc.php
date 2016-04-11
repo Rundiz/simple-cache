@@ -39,6 +39,7 @@ class Apc implements SimpleCacheInterface
         if (!apc_exists($id)) {
             return false;
         }
+
         return apc_delete($id);
     }// delete
 
@@ -57,6 +58,10 @@ class Apc implements SimpleCacheInterface
      */
     public function save($id, $data, $lifetime = 60)
     {
+        if (!is_int($lifetime) || is_int($lifetime) && $lifetime <= 0) {
+            $lifetime = 60;
+        }
+
         return apc_store($id, $data, $lifetime);
     }// save
 
