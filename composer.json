@@ -1,0 +1,23 @@
+{
+	"name": "rundiz/simple-cache",
+	"type": "library",
+	"description": "The simple and easy PHP cache drivers for cache any PHP data type.",
+	"keywords": ["cache", "php cache", "filesystem cache", "file system cache", "APC", "APCu", "Memcache", "Memcached"],
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Vee W.",
+			"email": "kawewong@gmail.com",
+			"homepage": "http://rundiz.com",
+			"role": "Developer"
+		}
+	],
+	"require": {
+		"php": ">=5.4.0"
+	},
+	"autoload": {
+		"psr-4": {
+			"Rundiz\\SimpleCache\\" : "Rundiz/SimpleCache"
+		}
+	}
+}
