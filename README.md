@@ -4,6 +4,7 @@ The simple and easy PHP cache drivers for cache any PHP data type.
 
 [![Latest Stable Version](https://poser.pugx.org/rundiz/simple-cache/v/stable)](https://packagist.org/packages/rundiz/simple-cache)
 [![License](https://poser.pugx.org/rundiz/simple-cache/license)](https://packagist.org/packages/rundiz/simple-cache)
+[![Total Downloads](https://poser.pugx.org/rundiz/simple-cache/downloads)](https://packagist.org/packages/rundiz/simple-cache)
 
 ## Example
 We currently support APC, APCu, Memcache, Memcached, File system drivers. These are how to initialize for each driver class.
