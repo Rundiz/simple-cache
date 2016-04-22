@@ -12,6 +12,11 @@ class CacheTest extends \PHPUnit_Framework_TestCase
         if (!function_exists('apc_fetch')) {
             return $this->markTestSkipped('APC cache is not installed.');
         }
+
+        if (apc_store('test_apc_cli', 'is_enable') === false && apc_fetch('test_apc_cli') === false && apc_delete('test_apc_cli') === false) {
+            return $this->markTestSkipped('APC cache is not enabled for CLI.');
+        }
+
         $SimpleCache = new \Rundiz\SimpleCache\Drivers\Apc();
         $save_result = $SimpleCache->save('cache_id', array('cache_data' => 'cache value'));
 
