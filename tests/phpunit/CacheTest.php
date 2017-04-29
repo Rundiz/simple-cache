@@ -3,7 +3,7 @@
 
 namespace Rundiz\SimpleCache\Tests;
 
-class CacheTest extends \PHPUnit_Framework_TestCase
+class CacheTest extends \PHPUnit\Framework\TestCase
 {
 
 
