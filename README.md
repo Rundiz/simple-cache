@@ -39,7 +39,7 @@ $SimpleCache = new \Rundiz\SimpleCache\Drivers\Apcu();
 $SimpleCache = new \Rundiz\SimpleCache\Drivers\FileSystem();
 ```
 
-Common methods to get, set, delete, or anything else please read more at [PSR-16 doc.](https://www.php-fig.org/psr/psr-16/).<br>
+Common methods to get, set, delete, or anything else please read more at [PSR-16 document](https://www.php-fig.org/psr/psr-16/).<br>
 Here are few examples.
 
 ```php

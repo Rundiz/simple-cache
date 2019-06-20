@@ -3,7 +3,7 @@ require dirname(dirname(__DIR__)) . '/vendor/autoload.php';
 
 
 $Memcached = new \Memcached;
-$Memcached->connect('localhost', 11211) or die ("Could not connect");
+$Memcached->addServer('localhost', 11211) or die ("Could not connect");
 $SimpleCache = new Rundiz\SimpleCache\Drivers\Memcached($Memcached);
 
 if (isset($_GET['act']) && $_GET['act'] === 'clear') {

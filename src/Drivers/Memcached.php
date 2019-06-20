@@ -65,12 +65,12 @@ class Memcached implements CacheInterface
             throw new InvalidArgumentException('$key must be a string');
         }
 
-        $flags = false;
-        $value = $this->Memcached->get($key, $flags);
-        if ($flags !== false) {
-            return $value;
+        $result = $this->Memcached->get($key);
+        if ($result === false && $this->Memcached->getResultCode() === \Memcached::RES_NOTFOUND) {
+            return $default;
         }
-        return $default;
+
+        return $result;
     }// get
 
 

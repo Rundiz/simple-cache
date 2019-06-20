@@ -24,7 +24,7 @@ class MemcacheddTest extends \PHPUnit\Framework\TestCase
         }
 
         $Memcached = new \Memcached;
-        $Memcached->connect('localhost', 11211) or die ("Could not connect");
+        $Memcached->addServer('localhost', 11211) or die ("Could not connect");
         $this->SimpleCache = new \Rundiz\SimpleCache\Drivers\Memcached($Memcached);
     }// setup
 
@@ -32,7 +32,7 @@ class MemcacheddTest extends \PHPUnit\Framework\TestCase
     public function tearDown()
     {
         $this->SimpleCache->clear();
-        $this->SimpleCache->getMemcached()->close();
+        $this->SimpleCache->getMemcached()->quit();
     }// tearDown
 
 
