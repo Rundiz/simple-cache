@@ -37,6 +37,9 @@ $SimpleCache = new \Rundiz\SimpleCache\Drivers\Apcu();
 
 // For File system (very basic cache driver)
 $SimpleCache = new \Rundiz\SimpleCache\Drivers\FileSystem();
+
+// For memory cache (This is using PHP array, if class was unset everything will be removed)
+$SimpleCache = new \Rundiz\SimpleCache\Drivers\Memory();
 ```
 
 Common methods to get, set, delete, or anything else please read more at [PSR-16 document](https://www.php-fig.org/psr/psr-16/).<br>
