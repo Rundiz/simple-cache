@@ -29,7 +29,7 @@ $memcached->addServer('localhost', 11211) or die ("Could not connect");
 $SimpleCache = new \Rundiz\SimpleCache\Drivers\Memcached($memcached);
 unset($memcached);
 
-// For APC (deprecated, recommended use APCu instead).
+// For APC (deprecated, use APCu instead).
 $SimpleCache = new \Rundiz\SimpleCache\Drivers\Apc();
 
 // For APCu
