@@ -43,7 +43,7 @@ $SimpleCache = new \Rundiz\SimpleCache\Drivers\Memory();
 ```
 
 Common methods to get, set, delete, or anything else please read more at [PSR-16 document](https://www.php-fig.org/psr/psr-16/).<br>
-Here are few examples.
+Examples.
 
 ```php
 // To get or fetch cache data.
