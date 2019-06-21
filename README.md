@@ -49,11 +49,26 @@ Here are few examples.
 // To get or fetch cache data.
 $SimpleCache->get('cache_key');
 
+// To get multiple cache data.
+$SimpleCache->getMultiple(['cache_key1', 'cache_key2']);
+
+// To check cache exists.
+$SimpleCache->has('cache_key');
+
 // To save cache data.
 $SimpleCache->set('cache_key', 'cache data. (any type of data... string, integer, double, array, object, etc.)', 90);
 
+// To save multiple cache data.
+$SimpleCache->setMultiple([
+    'cache_key1' => 'string value',
+    'cache_key2' => 12345,
+], 90);
+
 // To delete cache.
 $SimpleCache->delete('cache_key');
+
+// To delete multiple cache.
+$SimpleCache->deleteMultiple(['cache_key1', 'cache_key2']);
 
 // To clear all cached.
 $SimpleCache->clear();
