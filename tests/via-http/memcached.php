@@ -2,8 +2,11 @@
 require dirname(dirname(__DIR__)) . '/vendor/autoload.php';
 
 
+if (!class_exists('\\Memcached')) {
+    die('Memcached extension was not installed.');
+}
 $Memcached = new \Memcached;
-$Memcached->addServer('localhost', 11211) or die ("Could not connect");
+$Memcached->addServer('localhost', 11211) or die ('Could not connect to memcached server. See config at ' . __FILE__ . ': ' . __LINE__);
 $SimpleCache = new Rundiz\SimpleCache\Drivers\Memcached($Memcached);
 
 if (isset($_GET['act']) && $_GET['act'] === 'clear') {

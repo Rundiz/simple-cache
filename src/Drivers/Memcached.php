@@ -109,7 +109,7 @@ class Memcached implements CacheInterface
             throw new InvalidArgumentException('The $ttl must be integer or \\DateInterval object.');
         }
 
-        return $this->Memcached->set($key, $value, 0, $expires);
+        return $this->Memcached->set($key, $value, $expires);
     }// set
 
 

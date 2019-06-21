@@ -2,6 +2,9 @@
 require dirname(dirname(__DIR__)) . '/vendor/autoload.php';
 
 
+if (!function_exists('apcu_fetch')) {
+    die('APCu extension is not installed.');
+}
 $SimpleCache = new Rundiz\SimpleCache\Drivers\Apcu();
 
 if (isset($_GET['act']) && $_GET['act'] === 'clear') {
@@ -139,7 +142,7 @@ function displayCacheTest(array $item)
         <title>Simple Cache tests.</title>
     </head>
     <body>
-        <h1>APC</h1>
+        <h1>APCu</h1>
         <p><a href="./">Go back</a> | <a href="?act=clear">Clear all cache</a></p>
         <?php 
         if (isset($clearResult)) {
