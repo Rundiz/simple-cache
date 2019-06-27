@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<phpdocumentor>
+  <title><![CDATA[SimpleCache]]></title>
+  <parser>
+    <target>.phpdoc/cache</target>
+  </parser>
+  <transformer>
+    <target>.phpdoc/doc</target>
+  </transformer>
+  <files>
+    <directory>src</directory>
+  </files>
+</phpdocumentor>

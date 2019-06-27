@@ -21,6 +21,9 @@ $RECYCLE.BIN/
 ##############
 ## Project ignore
 ##############
+# doc generated folder
+.phpdoc
+.doc
 # cache folder
 cache/
 cache/*
