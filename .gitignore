@@ -30,3 +30,5 @@ cache/*
 # composer vendor folder
 vendor/
 vendor/*
+# unit tests cache file.
+.phpunit.result.cache
