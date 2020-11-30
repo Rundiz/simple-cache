@@ -23,14 +23,14 @@ class FileSystemTest extends \PHPUnit\Framework\TestCase
     protected $SimpleCache;
 
 
-    public function setup()
+    public function setup(): void
     {
         $this->cachePath = dirname(__DIR__) . DIRECTORY_SEPARATOR . 'cache';
         $this->SimpleCache = new FileSystemExtend($this->cachePath);
     }// setup
 
 
-    public function tearDown()
+    public function tearDown(): void
     {
         if (is_dir($this->cachePath)) {
             if (function_exists('exec')) {

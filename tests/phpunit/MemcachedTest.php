@@ -17,10 +17,10 @@ class MemcacheddTest extends \PHPUnit\Framework\TestCase
     protected $SimpleCache;
 
 
-    public function setup()
+    public function setup(): void
     {
         if (!class_exists('\\Memcached')) {
-            return $this->markTestSkipped('Memcached is not installed.');
+            $this->markTestSkipped('Memcached is not installed.');
         }
 
         $Memcached = new \Memcached;
@@ -29,7 +29,7 @@ class MemcacheddTest extends \PHPUnit\Framework\TestCase
     }// setup
 
 
-    public function tearDown()
+    public function tearDown(): void
     {
         $this->SimpleCache->clear();
         $this->SimpleCache->getMemcached()->quit();

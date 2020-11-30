@@ -17,17 +17,17 @@ class ApcuTest extends \PHPUnit\Framework\TestCase
     protected $SimpleCache;
 
 
-    public function setup()
+    public function setup(): void
     {
         if (!function_exists('apcu_fetch')) {
-            return $this->markTestSkipped('APCu cache is not installed.');
+            $this->markTestSkipped('APCu cache is not installed.');
         }
 
         $this->SimpleCache = new \Rundiz\SimpleCache\Drivers\Apcu();
     }// setup
 
 
-    public function tearDown()
+    public function tearDown(): void
     {
         $this->SimpleCache->clear();
     }// tearDown

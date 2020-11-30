@@ -17,13 +17,13 @@ class MemoryTest extends \PHPUnit\Framework\TestCase
     protected $SimpleCache;
 
 
-    public function setup()
+    public function setup(): void
     {
         $this->SimpleCache = new \Rundiz\SimpleCache\Drivers\Memory();
     }// setup
 
 
-    public function tearDown()
+    public function tearDown(): void
     {
         $this->SimpleCache->clear();
     }// tearDown
