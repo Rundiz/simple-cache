@@ -268,8 +268,8 @@ class FileSystem implements CacheInterface
             if (isset($match_data_type[1])) {
                 $data_type = $match_data_type[1];
             }
-            if (isset($match_data[1])) {
-                $data = unserialize($match_data[1]);
+            if (isset($match_data[1]) && is_scalar($match_data[1])) {
+                $data = unserialize(trim($match_data[1]));
             }
             unset($match_data, $match_data_type, $match_lifetime);
         }
