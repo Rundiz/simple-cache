@@ -22,14 +22,14 @@ $RECYCLE.BIN/
 ## Project ignore
 ##############
 # doc generated folder
-.phpdoc
-.doc
+/.phpdoc
+/.doc
 # cache folder
-cache/
-cache/*
+/cache/
+/cache/*
 # composer vendor folder
 /vendor/
-vendor/*
+/vendor/*
 # unit tests cache file.
 .phpunit.result.cache
-.phpunit.cache
+/.phpunit.cache
