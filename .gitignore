@@ -31,5 +31,5 @@ $RECYCLE.BIN/
 /vendor/
 /vendor/*
 # unit tests cache file.
-.phpunit.result.cache
 /.phpunit.cache
+/.phpunit.result.cache
